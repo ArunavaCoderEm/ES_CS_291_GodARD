@@ -1020,3 +1020,34 @@ int main() {
     }
         return(0);
 }
+
+
+// // 1D ARRAY REVERSE
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int i,n;
+    printf("Enter Length Of Array : - \n"); // if length not given have 'len = sizeof(arr)/sizeof(int)'
+    scanf("%d",&n);
+    int arr[n];
+    for (i = 0; i < n; ++i){
+        printf("Element %d - ",(i+1));
+        scanf("%d",&arr[i]);
+    }
+    printf("\nNormal array - \n");
+    for (i = 0; i < n; ++i){
+        printf("%d\t",arr[i]);
+    }
+    printf("\nReversed Array is - \n");
+    for (i = (n-1); i >= 0; --i){
+        printf("%d\t",arr[i]);
+    }
+        return(0);
+}
