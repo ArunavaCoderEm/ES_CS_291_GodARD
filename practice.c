@@ -873,3 +873,53 @@ void StringCompare(char str1[100], char str2[100]){
         printf("They are not equal");
     }
 }
+
+// // Matrix Multiplications
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int r,c,i,j,k,A[200][200],B[200][200],R[200][200];
+    printf("Enter Number Of Rows : \n");
+    scanf("%d",&r);
+    printf("Enter Number Of Coloumns : \n");
+    scanf("%d",&c);
+    printf("'A' MATRIX ELEMENTS \n");
+    for (i = 0; i < r; ++i){
+        for (j = 0; j < c; ++j){
+            printf("Enter Element A%d%d - ",(i+1),(j+1));
+            scanf("%d",&A[i][j]);
+        }
+    }
+    printf("'B' MATRIX ELEMENTS \n");
+    for (i = 0; i < r; ++i){
+        for (j = 0; j < c; ++j){
+            printf("Enter Element A%d%d - ",(i+1),(j+1));
+            scanf("%d",&B[i][j]);
+        }
+    }
+    printf("\n MULTIPLICATION \n\n");
+    for (i = 0; i < r; ++i){
+        for (j = 0; j < c; ++j){
+            R[200][200] = 0;
+            for (k = 0; k < c; ++k){
+                R[i][j] += A[i][j]*B[i][j];
+            }
+        }
+    }
+    for (i = 0; i < r; ++i){
+        for (j = 0; j < c; ++j){
+            printf("%d\t",R[i][j]);
+        }
+        if (j-c == 0){
+            printf("\n\n");
+        }
+    }
+        return(0);
+}
