@@ -1051,3 +1051,35 @@ int main() {
     }
         return(0);
 }
+
+// // // // Find Sum Of Even Integers From 1D Array
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int i,n,sum = 0;
+    printf("Enter Length Of Array : - \n"); // if length not given have 'len = sizeof(arr)/sizeof(int)'
+    scanf("%d",&n);
+    int arr[n];
+    for (i = 0; i < n; ++i){
+        printf("Element %d - ",(i+1));
+        scanf("%d",&arr[i]);
+    }
+    printf("\nNormal array - \n");
+    for (i = 0; i < n; ++i){
+        printf("%d\t",arr[i]);
+    }
+    for (i = 0; i < n; ++i){
+        if (arr[i] % 2 == 0){
+            sum = sum + arr[i];
+        }
+    }
+    printf("\nRequired Sum Of Even Numbers From An 1D Arrays Is %d",sum);
+        return(0);
+}
