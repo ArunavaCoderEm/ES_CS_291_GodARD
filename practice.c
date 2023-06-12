@@ -972,3 +972,51 @@ int main() {
     }
         return(0);
 }
+
+
+// // ADDITION OF MATRIX
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int r,c,i,j,k,A[200][200],B[200][200],R[200][200];
+    printf("Enter Number Of Rows : \n");
+    scanf("%d",&r);
+    printf("Enter Number Of Coloumns : \n");
+    scanf("%d",&c);
+    printf("'A' MATRIX ELEMENTS \n");
+    for (i = 0; i < r; ++i){
+        for (j = 0; j < c; ++j){
+            printf("Enter Element A%d%d - ",(i+1),(j+1));
+            scanf("%d",&A[i][j]);
+        }
+    }
+    printf("'B' MATRIX ELEMENTS \n");
+    for (i = 0; i < r; ++i){
+        for (j = 0; j < c; ++j){
+            printf("Enter Element A%d%d - ",(i+1),(j+1));
+            scanf("%d",&B[i][j]);
+        }
+    }
+    printf("\n ADDITION \n\n");
+    for (i = 0; i < r; ++i){
+        for (j = 0; j < c; ++j){
+             R[j][i] = A[i][j] + B[i][j];
+        }
+    }
+    for (int i = 0; i < c; ++i){
+        for (int j = 0; j < r; ++j) {
+        printf("%d  ", R[i][j]);
+        if (j == c - 1){
+            printf("\n");
+            }
+        }
+    }
+        return(0);
+}
