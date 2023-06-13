@@ -1145,3 +1145,38 @@ int main() {
     }
         return(0);
 }
+
+// // // ACKERMAN WITH RECURSION
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function Declaration
+int ack(int m, int n);
+
+int main() {
+    int x,y;
+    double result;
+    printf("Enter X and Y here - \n");
+    scanf("%d %d",&x,&y);
+    result = ack(x,y);
+    printf("Result of Ackerman(%d,%d) is %d",x,y,result);
+        return(0);
+}
+
+int ack(int m, int n){
+    if (m == 0){
+        return (n+1);
+    }
+    else if (m > 0 && n == 0){
+        return ack((m-1),1);
+    }
+    else if (m > 0 && n > 0){
+        return ack((m-1),ack(m,n-1));
+    }
+}
