@@ -1180,3 +1180,51 @@ int ack(int m, int n){
         return ack((m-1),ack(m,n-1));
     }
 }
+
+// // // HACKERRANK DIAGONAL DIFFERENCE (EASY BUT WAS IN HACKERRANK SO ... )
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function Declaration
+int diagonalDifference(int arr_rows, int arr_columns,int arr[200][200]);
+
+int main() {
+    int rac,i,j,arr[200][200];
+    printf("Enter Number of rows and coloumns ");
+    scanf("%d",&rac);
+    for (i = 0; i < rac; ++i){
+        for (j = 0; j < rac; ++j){
+            printf("Element %d%d ",(i+1),(j+1));
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    int x = diagonalDifference(rac , rac, arr);
+    printf("%d",x);
+    return(0);
+}
+
+int diagonalDifference(int arr_rows, int arr_columns,int arr[200][200]) {
+    int i,j,k,sum = 0,sumr = 0;
+    for (i = 0; i < arr_rows; ++i){
+        for (j = 0; j <arr_columns; ++j){
+            if (i == j){
+                sum = sum + arr[i][j];
+            }
+        }
+    }
+    for (int i1 = (arr_rows-1); i1 >= 0; --i1){
+        for (int j1 = 0; j1 < arr_columns; ++j1){
+            if (i1 + j1 == (arr_columns-1)){
+                sumr = sumr + arr[i1][j1];
+            }
+        }
+    }
+    int x = abs(sumr-sum);
+    return (x);
+}
