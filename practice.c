@@ -1228,3 +1228,27 @@ int diagonalDifference(int arr_rows, int arr_columns,int arr[200][200]) {
     int x = abs(sumr-sum);
     return (x);
 }
+
+// // // // ARRAY PRINT USING POINTER
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Number of elements : ");
+    scanf("%d",&n);
+	int arr[n] ;
+    for (int i = 0; i < n; ++i){
+        printf("Element %d ",i+1);
+        scanf("%d",&arr[i]);
+    }
+
+	int *pntr = arr;
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d  ", *(pntr + i));
+	}
+	printf("\n");
+    return 0;
+}
