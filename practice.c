@@ -1252,3 +1252,33 @@ int main()
 	printf("\n");
     return 0;
 }
+
+// // Count Number of odd digits in an array with function
+#include <stdio.h>
+int oddCount(int arr[200],int m);
+int main() {
+    int array[200],i,j,n;
+    printf("Enter array size here : - ");
+    scanf("%d",&n);
+    for (i = 0; i < n; ++i){
+        printf("Enter element %d :- ",(i+1));
+        scanf("%d",&array[i]);
+    }
+    printf("ARRAY - \n");
+    for (j = 0; j <  n; ++j){
+        printf("%d  ",array[j]);
+    }
+    int odd = oddCount(array,n);
+    printf("\nTotal odd numbers in array are %d",odd);
+    return 0;
+}
+
+int oddCount(int arr[200],int m){
+    int k,l,odd = 0;
+    for (k = 0; k < m; ++k){
+        if (arr[k] % 2 != 0){
+            odd += 1;
+        }
+    }
+    return (odd);
+}
