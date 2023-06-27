@@ -1282,3 +1282,33 @@ int oddCount(int arr[200],int m){
     }
     return (odd);
 }
+
+// // count number of even numbers in an array with function
+#include <stdio.h>
+int evenCount(int arr[200],int m);
+int main() {
+    int array[200],i,j,n;
+    printf("Enter array size here : - ");
+    scanf("%d",&n);
+    for (i = 0; i < n; ++i){
+        printf("Enter element %d :- ",(i+1));
+        scanf("%d",&array[i]);
+    }
+    printf("ARRAY - \n");
+    for (j = 0; j <  n; ++j){
+        printf("%d  ",array[j]);
+    }
+    int even = evenCount(array,n);
+    printf("\nTotal even numbers in array are %d",even);
+    return 0;
+}
+
+int evenCount(int arr[200],int m){
+    int k,l,even = 0;
+    for (k = 0; k < m; ++k){
+        if (arr[k] % 2 == 0){
+            even += 1;
+        }
+    }
+    return (even);
+}
