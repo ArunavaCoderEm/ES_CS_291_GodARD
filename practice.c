@@ -1312,3 +1312,43 @@ int evenCount(int arr[200],int m){
     }
     return (even);
 }
+
+
+// // SHOW THE NUMBER TABLE OF 'N' NUMBERS USER IN A 2D ARRAY WITH IN 'N' ROW(S)
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function Declaration
+
+
+int main() {
+    int n,i,j,m,l,k;
+    int dig[n+1];
+    printf("Digits For Number Table :- ");
+    scanf("%d",&n);
+    for (i = 0; i < n; ++i){
+        printf("Enter Number %d - ",(i+1));
+        scanf("%d",&dig[i]);
+    }
+    printf("\nThe Digits Are - \n");
+    for (j = 0; j < n; ++j){
+        printf("%d ",dig[j]);
+    }
+    printf("\nEnter Upto Which You Want The Table - \n");
+    scanf("%d",&m);
+    printf("\nTable Multiplicant Is - %d",m);
+    printf("\n");
+    for (k = 0; k < n; ++k){
+        for (l = 1; l <= m; ++l){
+            printf("%d  ",(dig[k]*l));
+        }
+        printf("\n");
+    }
+    return(0);
+}
