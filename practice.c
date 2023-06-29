@@ -1352,3 +1352,40 @@ int main() {
     }
     return(0);
 }
+
+// // // REVERSE AN ARRAY USING FUNCTION
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function Declaration
+void ReverseArray(int arr[200], int n);
+
+int main() {
+    int array[200],n,k,l,j;
+    printf("Enter size of Array  \n");
+    scanf("%d",&n);
+    for (j = 0; j < n; ++j){
+        printf("Enter Element %d \t",(j+1));
+        scanf("%d",&array[j]);
+    }
+    printf("ARRAY -\n");
+    for (k = 0; k < n; ++k){
+        printf("%d  ",array[k]);
+    }
+    printf("\nReverse Array -\n");
+    ReverseArray(array,n);
+    return(0);
+}
+
+void ReverseArray(int arr[200], int n){
+    int i;
+    for (i = (n-1); i >= 0; --i){
+        printf("%d  ",arr[i]);
+    }
+}
