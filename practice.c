@@ -1389,3 +1389,36 @@ void ReverseArray(int arr[200], int n){
         printf("%d  ",arr[i]);
     }
 }
+
+// // // Sum Of Digits Of A Number With Function
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function Declaration
+void SumOfDigit(int n);
+
+int main() {
+    int h;
+    printf("Enter The Number Here - \n");
+    scanf("%d",&h);
+    SumOfDigit(h);
+    return(0);
+}
+
+void SumOfDigit(int n){
+    int i,j,sum = 0,temp,dig;
+    j = log10(n) + 1;
+    temp = n;
+    for (i = 0; i < j; ++i){
+        dig = temp % 10;
+        sum = sum + dig;
+        temp = temp / 10;
+    }
+    printf("The Sum Of Digits Of %d Is %d",n,sum);
+}
