@@ -874,7 +874,7 @@ void StringCompare(char str1[100], char str2[100]){
     }
 }
 
-// // Matrix Multiplications
+// Matrix Multiplications
 #include <stdio.h>
 #include<string.h>
 #include <math.h>
@@ -924,7 +924,7 @@ int main() {
         return(0);
 }
 
-// // Transpose Of Matrix
+// Transpose Of Matrix
 #include <stdio.h>
 #include<string.h>
 #include <math.h>
@@ -953,7 +953,7 @@ int main() {
             printf("%d\t",A[i][j]);
         if (j - c == -1){
             printf("\n\n");
-            }
+        }
         }
     }
     printf("\n TRANSPOSE \n\n");
@@ -972,7 +972,6 @@ int main() {
     }
         return(0);
 }
-
 
 // // ADDITION OF MATRIX
 #include <stdio.h>
@@ -1021,8 +1020,7 @@ int main() {
         return(0);
 }
 
-
-// // 1D ARRAY REVERSE
+// 1D ARRAY REVERSE
 #include <stdio.h>
 #include<string.h>
 #include <math.h>
@@ -1084,7 +1082,7 @@ int main() {
         return(0);
 }
 
-// // // // Find Sum Of Odd Integers From 1D Array
+// // // Sum Of Odd Numbers From An 1D Array
 #include <stdio.h>
 #include<string.h>
 #include <math.h>
@@ -1116,7 +1114,7 @@ int main() {
         return(0);
 }
 
-// // Point on straight line or not
+// // // STRAIGHT LINE 
 #include <stdio.h>
 #include<string.h>
 #include <math.h>
@@ -1143,6 +1141,51 @@ int main() {
     else {
         printf("Not on straight line");
     }
+        return(0);
+}
+
+// // // TEMPERATURE 
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    float c,f;
+    printf("Enter celcius temp here ");
+    scanf("%f",&c);
+    f = ((9*c)/5) + 32;
+    printf("The F temp is - %.2f",f);
+        return(0);
+}
+
+// // // LEAP YEAR
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int year;
+    printf("Enter Year Here - \n");
+    scanf("%d",&year);
+    if (year % 100 == 0 && year % 400 == 0){
+        printf("%d is leap year",year);
+    }
+    else if (year % 100 != 0 && year % 4 == 0){
+        printf ("%d is leap",year);
+    }
+    else {
+        printf("Not");
+    } 
         return(0);
 }
 
@@ -1181,7 +1224,7 @@ int ack(int m, int n){
     }
 }
 
-// // // HACKERRANK DIAGONAL DIFFERENCE (EASY BUT WAS IN HACKERRANK SO ... )
+// // Find Biggest element in a matrix
 #include <stdio.h>
 #include<string.h>
 #include <math.h>
@@ -1192,41 +1235,11 @@ int ack(int m, int n){
 #include <time.h>
 
 // Function Declaration
-int diagonalDifference(int arr_rows, int arr_columns,int arr[200][200]);
+
 
 int main() {
-    int rac,i,j,arr[200][200];
-    printf("Enter Number of rows and coloumns ");
-    scanf("%d",&rac);
-    for (i = 0; i < rac; ++i){
-        for (j = 0; j < rac; ++j){
-            printf("Element %d%d ",(i+1),(j+1));
-            scanf("%d",&arr[i][j]);
-        }
-    }
-    int x = diagonalDifference(rac , rac, arr);
-    printf("%d",x);
+    int i,j,k,l,matrix[100][100];
     return(0);
-}
-
-int diagonalDifference(int arr_rows, int arr_columns,int arr[200][200]) {
-    int i,j,k,sum = 0,sumr = 0;
-    for (i = 0; i < arr_rows; ++i){
-        for (j = 0; j <arr_columns; ++j){
-            if (i == j){
-                sum = sum + arr[i][j];
-            }
-        }
-    }
-    for (int i1 = (arr_rows-1); i1 >= 0; --i1){
-        for (int j1 = 0; j1 < arr_columns; ++j1){
-            if (i1 + j1 == (arr_columns-1)){
-                sumr = sumr + arr[i1][j1];
-            }
-        }
-    }
-    int x = abs(sumr-sum);
-    return (x);
 }
 
 // // // // ARRAY PRINT USING POINTER
@@ -1253,66 +1266,65 @@ int main()
     return 0;
 }
 
-// // Count Number of odd digits in an array with function
+// // // ARRAY PRINT USING FUNCTION
 #include <stdio.h>
-int oddCount(int arr[200],int m);
+void printArray(int arr[200], int n);
 int main() {
-    int array[200],i,j,n;
-    printf("Enter array size here : - ");
-    scanf("%d",&n);
-    for (i = 0; i < n; ++i){
-        printf("Enter element %d :- ",(i+1));
-        scanf("%d",&array[i]);
+    int j,k,array[200];
+    printf("Enter Size Of Array : ");
+    scanf("%d",&j);
+    for(k = 0; k < j; ++k){
+        printf("Enter Element %d - ",(k+1));
+        scanf("%d",&array[k]);
     }
-    printf("ARRAY - \n");
-    for (j = 0; j <  n; ++j){
-        printf("%d  ",array[j]);
-    }
-    int odd = oddCount(array,n);
-    printf("\nTotal odd numbers in array are %d",odd);
+    printArray(array,j);
+
     return 0;
 }
 
-int oddCount(int arr[200],int m){
-    int k,l,odd = 0;
-    for (k = 0; k < m; ++k){
-        if (arr[k] % 2 != 0){
-            odd += 1;
-        }
-    }
-    return (odd);
-}
-
-// // count number of even numbers in an array with function
-#include <stdio.h>
-int evenCount(int arr[200],int m);
-int main() {
-    int array[200],i,j,n;
-    printf("Enter array size here : - ");
-    scanf("%d",&n);
+void printArray(int arr[200], int n){
+    int i;
     for (i = 0; i < n; ++i){
-        printf("Enter element %d :- ",(i+1));
-        scanf("%d",&array[i]);
+        printf("%d  ",arr[i]);    
     }
-    printf("ARRAY - \n");
-    for (j = 0; j <  n; ++j){
-        printf("%d  ",array[j]);
-    }
-    int even = evenCount(array,n);
-    printf("\nTotal even numbers in array are %d",even);
-    return 0;
 }
 
-int evenCount(int arr[200],int m){
-    int k,l,even = 0;
-    for (k = 0; k < m; ++k){
-        if (arr[k] % 2 == 0){
-            even += 1;
-        }
+// // // REVERSE AN ARRAY USING FUNCTION
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function Declaration
+void ReverseArray(int arr[200], int n);
+
+int main() {
+    int array[200],n,k,l,j;
+    printf("Enter size of Array  \n");
+    scanf("%d",&n);
+    for (j = 0; j < n; ++j){
+        printf("Enter Element %d \t",(j+1));
+        scanf("%d",&array[j]);
     }
-    return (even);
+    printf("ARRAY -\n");
+    for (k = 0; k < n; ++k){
+        printf("%d  ",array[k]);
+    }
+    printf("\nReverse Array -\n");
+    ReverseArray(array,n);
+    return(0);
 }
 
+void ReverseArray(int arr[200], int n){
+    int i;
+    for (i = (n-1); i >= 0; --i){
+        printf("%d  ",arr[i]);
+    }
+}
 
 // // SHOW THE NUMBER TABLE OF 'N' NUMBERS USER IN A 2D ARRAY WITH IN 'N' ROW(S)
 #include <stdio.h>
@@ -1353,44 +1365,7 @@ int main() {
     return(0);
 }
 
-// // // REVERSE AN ARRAY USING FUNCTION
-#include <stdio.h>
-#include<string.h>
-#include <math.h>
-#include <stdbool.h>
-#include <ctype.h>
-#include <conio.h>
-#include <stdlib.h>
-#include <time.h>
-
-// Function Declaration
-void ReverseArray(int arr[200], int n);
-
-int main() {
-    int array[200],n,k,l,j;
-    printf("Enter size of Array  \n");
-    scanf("%d",&n);
-    for (j = 0; j < n; ++j){
-        printf("Enter Element %d \t",(j+1));
-        scanf("%d",&array[j]);
-    }
-    printf("ARRAY -\n");
-    for (k = 0; k < n; ++k){
-        printf("%d  ",array[k]);
-    }
-    printf("\nReverse Array -\n");
-    ReverseArray(array,n);
-    return(0);
-}
-
-void ReverseArray(int arr[200], int n){
-    int i;
-    for (i = (n-1); i >= 0; --i){
-        printf("%d  ",arr[i]);
-    }
-}
-
-// // // Sum Of Digits Of A Number With Function
+// // Sum Of Digits Of A Number With Function
 #include <stdio.h>
 #include<string.h>
 #include <math.h>
