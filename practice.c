@@ -1457,3 +1457,54 @@ int main() {
     }
     return 0;
 }
+
+
+// // // PATTERN OF 1 AND 0
+// // 1 0 1 0 1 0 
+// // 0 1 0 1 0 1 
+// // 1 0 1 0 1 0 
+// // 0 1 0 1 0 1 
+// // 1 0 1 0 1 0 
+// // 0 1 0 1 0 1 ....
+
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function Declaration
+
+
+int main() {
+    int n,i,j;
+    printf("Enter Number Of Lines Here - ");
+    scanf("%d",&n);
+    for (i = 0; i <= n; ++i){
+        if (i % 2 == 0){
+            for (j = 0; j <= n; ++j){
+                if (j % 2 == 0){
+                    printf("1 ");
+                }
+                else if (j % 2 != 0) {
+                    printf("0 ");
+                }
+            }
+        }
+        else if (i % 2 != 0) {
+            for (j = 0; j <= n; ++j){
+                if (j % 2 == 0){
+                    printf("0 ");
+                }
+                else if (j % 2 != 0) {
+                    printf("1 ");
+                }                
+            }
+        }
+        printf("\n");
+    }
+    return(0);
+}
