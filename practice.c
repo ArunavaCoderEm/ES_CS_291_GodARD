@@ -1508,3 +1508,38 @@ int main() {
     }
     return(0);
 }
+
+// // Reverse particular position of array
+#include <stdio.h>
+#include<string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function Declaration
+
+
+int main() {
+    int arr[] = {0,1,2,3,4,5,6,7,8,9,10};
+    int i,j,k,start,last;
+    printf("Enter start here - "); 
+    scanf("%d",&start); 
+    printf("Enter last here - ");
+    scanf("%d",&last);
+    int y = sizeof(arr)/sizeof(int);
+    if (start < y && last < y && start < last){
+        for (i = 0; i < start; ++i){
+            printf(" %d ",arr[i]);
+        }
+        for (j = last; j >= start; --j){
+            printf(" %d ",arr[j]);
+        }
+        for (k = last+1; k < y; ++k){
+            printf(" %d ",arr[k]);
+        }
+    }
+    return(0);
+}
