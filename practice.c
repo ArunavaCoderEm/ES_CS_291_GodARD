@@ -1543,3 +1543,46 @@ int main() {
     }
     return(0);
 }
+
+// // // Practice Sum Upto Range
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <time.h>
+
+// Function Declaration
+
+int checkrange(int digit, int range){
+    int sum = 0, temp = digit, rem;
+    int j = log10(digit)+1;
+    for (int i = 0; i < j; ++i){
+        rem = temp % 10;
+        sum += rem;
+        temp /= 10;
+    }
+    if (sum <= range){
+        return 1;
+    }
+    return 0;
+}
+
+// MAIN FUNCTION
+
+int main() {
+    int i,n,r;
+    printf("Enter Upto Which You Want To Check ? - ");
+    scanf("%d",&n);
+    printf("\nEnter Sum Range - ");
+    scanf("%d",&r);
+    for (i = 1; i <= n; ++i){
+        if (checkrange(i,r)){
+            printf("ONLY %d SELECTED\n",i);
+        }
+    }
+    return(0);
+}
