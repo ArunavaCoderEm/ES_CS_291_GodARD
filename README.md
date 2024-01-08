@@ -5,7 +5,7 @@ All my Second semester_First Year C programming language code done in lab practi
 I will update these codes thrice a week for sure.
 
 # File ?
-All codes are included with proper comments in the 'practice.c' file.
+All codes are included with proper comments in the 'practice.c' file and 'C_HACKERRANK.c' file.
 
 # Made With ?
 C Programming Language and ❤️❤️
